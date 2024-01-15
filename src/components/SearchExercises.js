@@ -84,13 +84,19 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
     fontSize: { lg: "20px", xs: "14px" },
     height: "56px",
     position: "absolute",
-    transition: "all 0.3s ease-in-out", // Added transition for all properties
-   
+    transition: "all 0.3s ease-in-out",
   }}
-  onClick={handleSearch}
+  onClick={() => {
+    handleSearch(); // Call your search function if needed
+    
+    // Smooth scroll to the exercises section
+    const exercisesSection = document.getElementById("exercises");
+    exercisesSection.scrollIntoView({ behavior: "smooth" });
+  }}
 >
   Search
 </Button>
+
 
 
 
